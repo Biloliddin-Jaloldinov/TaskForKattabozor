@@ -22,7 +22,7 @@ class Repository {
 
     suspend fun getCategoryProducts(): Response<CategoryProducts>? {
         return try {
-            val response = categoryApi.getCategoryOffers()
+            val response = categoryApi.getCategoryProducts()
             if (response.isSuccessful) {
                 response
             } else {

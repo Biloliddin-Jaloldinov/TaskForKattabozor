@@ -12,11 +12,12 @@ import com.example.kattabozortask.databinding.ScreenProductsCategoryBinding
 import com.example.kattabozortask.network.data.Product
 import com.example.kattabozortask.presentation.ui.adapter.ProductAdapter
 import com.example.kattabozortask.presentation.viewmodel.CategoryProductsViewModel
+import com.example.kattabozortask.presentation.viewmodel.impl.CategoryProductsViewModelImpl
 
 class CategoryProductsScreen : Fragment() {
     private lateinit var binding: ScreenProductsCategoryBinding
     private lateinit var adapter: ProductAdapter
-    private val viewModel: CategoryProductsViewModel by viewModels()
+    private val viewModel: CategoryProductsViewModel by viewModels<CategoryProductsViewModelImpl>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,7 +42,6 @@ class CategoryProductsScreen : Fragment() {
     private fun setObservers() {
         viewModel.categoryProductsLiveData.observe(this, productsObserver)
         viewModel.error.observe(this, errorObserver)
-
     }
 
     private fun initButtons() {

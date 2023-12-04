@@ -41,7 +41,7 @@ class ProductAdapter : ListAdapter<Product, ProductAdapter.Holder>(Comparator())
         }
 
         override fun areContentsTheSame(oldItem: Product, newItem: Product): Boolean {
-            return oldItem == newItem
+            return oldItem.id == newItem.id
         }
 
     }
