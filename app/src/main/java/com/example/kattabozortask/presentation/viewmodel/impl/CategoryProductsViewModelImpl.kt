@@ -26,7 +26,7 @@ class CategoryProductsViewModelImpl : CategoryProductsViewModel, ViewModel() {
             _error.value = "Internet not connected"
             return
         }
-        viewModelScope.launch(Dispatchers.Main) {
+        viewModelScope.launch{
             val response = repository.getCategoryProducts()
 
             if (response != null && response.isSuccessful) {
